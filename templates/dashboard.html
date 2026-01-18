@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phishing Lab Dashboard</title>
+  <style>
+    body { font-family: Arial; background:#f2f2f2; }
+    .box { width: 80%; margin: 40px auto; background:white; padding:20px; }
+    table { width:100%; border-collapse: collapse; }
+    th, td { border:1px solid #ddd; padding:8px; }
+    th { background:#222; color:white; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>📊 Phishing Lab — Dashboard</h1>
+    <table>
+      <tr>
+        <th>Fichier</th>
+        <th>Type</th>
+        <th>Télécharger</th>
+      </tr>
+      {% for file in files %}
+      <tr>
+        <td>{{ file.name }}</td>
+        <td>{{ file.type }}</td>
+        <td><a href="/download/{{ file.name }}">Télécharger</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br>
+    <a href="/">Retour au Lab</a>
+  </div>
+</body>
+</html>
